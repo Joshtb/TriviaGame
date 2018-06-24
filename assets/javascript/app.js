@@ -12,6 +12,14 @@ var questions = [{
         d: "Summer"
     },
     {
+        q:"In the show 'Family Guy', what is the name of the talking dog?",
+        a:"Billy",
+        b:"Brian",
+        c:"Buster",
+        d:"Bryce"
+
+    },
+    {
         q: "In the show 'Breaking Bad', what is Jesse's last name?",
         a: "Smith",
         c: "White",
@@ -19,13 +27,13 @@ var questions = [{
         d: "Greene"
     },
     {
-        q: " Click This Button For Next Question",
-        a: "",
-        d: "",
-        c: "",
-        b: "click me!"
-    },
+        q:"In the show 'Dexter', what is Dexter's sisters name?",
+        a:"Denise",
+        b:"Deborah",
+        c:"Danielle",
+        d:"Diana"
 
+    },
     {
         q: "In 'Breaking Bad', what substance are they making?",
         a: "Crack",
@@ -34,54 +42,11 @@ var questions = [{
         d: "Cookies"
     },
     {
-        q: " Click This Button For Next Question10",
-        a: "",
-        d: "",
-        c: "",
-        b: "click me!"
-    },
-    {
-        q: " Click This Button For Next Question9",
-        a: "",
-        d: "",
-        c: "",
-        b: "click me!"
-    },
-    {
         q: "From the show 'South Park' who is a towel?",
         a: "Cartman",
         c: "Kyle",
-        d: "You are",
+        d: "Stan",
         b: "You are"
-    },
-    {
-        q: "From the show 'South Park' who is a towel? ",
-        a: "Cartman",
-        d: "Kyle",
-        c: "Stan",
-        b: "You are"
-    },
-    {
-        q: " Click This Button For Next Question7",
-        a: "",
-        d: "",
-        c: "",
-        b: "click me!"
-    },
-
-    {
-        q: " Click This Button For Next Question6",
-        a: "",
-        d: "",
-        c: "",
-        b: "click me!"
-    },
-    {
-        q: " Click This Button For Next Question5",
-        a: "",
-        d: "",
-        c: "",
-        b: "click me!"
     },
     {
         q: "In 'Rick and Morty' what does Rick always say?",
@@ -91,67 +56,11 @@ var questions = [{
         d: "Summer!"
     },
     {
-        q: " Click This Button For Next Question2",
-        a: "",
-        d: "",
-        c: "",
-        b: "click me!"
-    },
-    {
-        q: " Click This Button For Next Question1",
-        a: "",
-        d: "",
-        c: "",
-        b: "click me!"
-    },
-    {
-        q: " Click This Button For Next Question1",
-        a: "",
-        d: "",
-        c: "",
-        b: "click me!"
-    },
-    {
-        q: "In the show 'Family Guy', what is the word??",
-        b: "Bird",
-        a: "Word",
-        c: "Family",
-        d: "Funny"
-    },
-    {
-        q: " Click This Button For Next Question1.4",
-        a: "",
-        d: "",
-        c: "",
-        b: "click me!"
-    },
-    {
-        q: " Click This Button For Next Question1.3",
-        a: "",
-        d: "",
-        c: "",
-        b: "click me!"
-    },
-    {
-        q: " Which of the following items was owned by the fewest U.S. homes in 1990?",
-        a: "Home computer",
-        d: "Cordless phone",
-        c: "Dishwasher",
-        b: "Compact disk player"
-    },
-    {
-        q: " Click This Button For Next Question1.2",
-        a: "",
-        d: "",
-        c: "",
-        b: "click me!"
-    },
-    {
-        q: " Click This Button For Next Question1.1",
-        a: "",
-        d: "",
-        c: "",
-        b: "click me!"
+        q: "In the show 'Trailer Park Boys', what does Bubbles do for a living?",
+        a: "Steal",
+        d: "Welfare",
+        c: "Legal Advice",
+        b: "Rebuilds Shopping Carts"
     },
     {
         q: "In the show 'Family Guy', what is the word?",
@@ -161,194 +70,216 @@ var questions = [{
         d: "Funny"
     },
     {
-        q: " Click This Button For Next Question1.13",
-        a: "",
-        d: "",
-        c: "",
-        b: "click me!"
-    }, {
-        q: " Click This Button For Next Question1.12",
-        a: "",
-        d: "",
-        c: "",
-        b: "click me!"
-    }, {
-        q: " Which of the following items was owned by the fewest U.S. homes in 1990?",
-        a: "Home computer",
-        d: "Cordless phone",
-        c: "Dishwasher",
-        b: "Compact disk player"
+        q: "In the show 'Trailer Park Boys', Who doesn't wear a shirt?",
+        a: "Mr Lahey",
+        d: "Ricky",
+        c: "Bubbles",
+        b: "Randy"
     },
     {
-        q: " Click This Button For Next Question1.133",
-        a: "",
-        d: "",
-        c: "",
-        b: "click me!"
-    },{
-        q: " Click This Button For Next Question1.133",
-        a: "",
-        d: "",
-        c: "",
-        b: "click me!"
-    },
-    {
-        q: "In 1990, in what percentage of U.S. married couples did the wife earn more money than the husband?",
-        a: "8",
-        d: "38",
-        c: "58",
-        b: "18"
-    },
+        q:"GAME OVER",
+        c:"Your score is",
+        a:"at the Bottom",
+        b:"Click Refresh",
+        d:"To try again!"
+        
+    
+    }  
 ];
-var counter = 20;
+
 var timer = $("#timer");
+var winBoard =$("#wins");
+var lossBoard =$("#losses");
 var losses = 0;
 var wins = 0;
+var counter = 11;
+
 var questionNum = 0;
+var gameRunning = false;
+
+
 // var anwsers = {q1 = question1.b,q2 = question2.b,q3 = question3.b,q4 = question4.b};
 
 
-
+// ******PUT CLICK EVENTS INTO DOC>READY, PUT IF STATEMENTS IN THE CLICK EVENT!****
 
 
 
 
 $(document).ready(function () {
+    $(".start").on("click", function () {
+        console.log($(this).text());
+        // stopTime2();
+        loadQuestion();
+        if (gameRunning === false){
+            counter = 0;
+            endCounter=0;
+            stopTime();
+            // stopTime2();
+        }else {
+            // stopTime2();
+            counter = 11;
+           timeStart;
+        }
+
+    })
+
+    $(".anwser").on("click", function () {
+        var selection = $(this).text();
+        
+        console.log('selection: ' + selection)
+        console.log(questions[questionNum].b)
+        if (selection === questions[questionNum].b) {
+            timeStart;
+            timer.html(counter);
+            wins++;
+            winBoard.html(wins);
+            questionNum++;
+            loadQuestion();
+        } else if (selection !== questions[questionNum].b) {
+            timer.html(counter);
+            lossBoard.html(losses);
+            losses++;
+            
+           
+            timeStart;
+            endPage();
+         
+           
+        }
+    
+        
+    });
+
     function startGame() {
+        gameRunning = false;
+           
         $("#question").text("Press Start to play!");
         $("#anwser1").text("");
         $("#anwser2").text("");
         $("#anwser3").text("");
         $("#anwser4").text(" ");
-        $(".start").on("click", function () {
-            console.log($(this).text());
-            loadQuestion();
-            
-        })
+
 
 
     }
 
     function loadQuestion() {
-
-        countDown();
+        // setInterval(function(){countDown(),counter}, 1000);
+        timeStart;
+        gameRunning = true;
+       counter = 11;
+       timer.html(counter);
+    
         $("#question").html(questions[questionNum].q);
         $("#anwser1").text(questions[questionNum].c);
         $("#anwser2").text(questions[questionNum].a);
         $("#anwser3").text(questions[questionNum].b);
         $("#anwser4").text(questions[questionNum].d);
-
-
-
-
-        $(".anwser").on("click", function () {
-            var selection = $(this).text();
-            console.log("fire event 1")
-            console.log('selection: ' + selection)
-            console.log(questions[questionNum].b)
-            if (selection === questions[questionNum].b) {
-                wins++;
-                console.log("wins are " + wins);
-                questionNum++;
-                loadQuestion();
-            } else {
-                losses++;
-                console.log("first losses are" + losses)
-                questionNum++;
-                loadQuestion();
-            }
-        });
-
+       
     }
-
-    function secondQuestion() {
-        countDown();
-        questionNum++;
-        // countDown();
+    var timeStart = setInterval(function(){countDown(),counter}, 1000);
+    // var newTimeStart = setInterval(function(){newCountDown(),newCounter}, 1000);
+    
+    function loadQuestion2() {
+        // setInterval(function(){countDown(),counter}, 1000);
+        counter = 10;
+        timeStart;
+        console.log(timeStart);
+      
+        timer.html(counter);
+     if (counter == 2){
+         timeStart;
+         counter =10;
+     }
+        gameRunning = true;
+      
+       
+        
         $("#question").html(questions[questionNum].q);
         $("#anwser1").text(questions[questionNum].b);
         $("#anwser2").text(questions[questionNum].a);
         $("#anwser3").text(questions[questionNum].c);
         $("#anwser4").text(questions[questionNum].d);
-
-
-
-
-        $(".anwser").on("click", function () {
-            var selection = $(this).text();
-            console.log("fire event 1")
-            console.log('selection: ' + selection)
-            console.log(questions[questionNum].b)
-            if (selection === questions[questionNum].b) {
-                wins++;
-                console.log("wins are " + wins);
-                thirdQuestion();
-
-            } else {
-                losses++;
-                console.log("first losses are" + losses)
-                thirdQuestion();
-
-            }
-        });
+        $('#wins').html(wins);
+        $("#losses").html(losses);
     }
-
-    function thirdQuestion() {
-        countDown();
-        questionNum++;
-        // countDown();
-        $("#question").html(questions[questionNum].q);
-        $("#anwser1").text(questions[questionNum].d);
-        $("#anwser2").text(questions[questionNum].a);
-        $("#anwser3").text(questions[questionNum].c);
-        $("#anwser4").text(questions[questionNum].b);
+   
 
 
 
-
-        $(".anwser").on("click", function () {
-            var selection = $(this).text();
-            console.log("fire event 1")
-            console.log('selection: ' + selection)
-            console.log(questions[questionNum].b)
-            if (selection === questions[questionNum].b) {
-                wins++;
-                console.log("wins are " + wins);
-                loadQuestion();
-
-            } else {
-                losses++;
-                console.log("first losses are" + losses)
-                loadQuestion();
-
-            }
-        });
-    }
-
-
-
-
-
-
-
-    setInterval(countDown,1000);
 
     function countDown() {
-            counter;
-            timer.html(counter);
-            counter--;
-            
-            if (counter = 0) {
-                clearInterval(countDown);
-    
-            } else {
-                timer.innerHTML = counter + ' seconds remaining';
-              counter--;
-            }
-        }
+        console.log(counter);
+        counter--;
+        timer.html(counter);
+        if (counter == 0){
+           losses++;
+            endPage();
+         } else if( counter == -4){
+            counter = 11;
+             questionNum++;
+             loadQuestion2();
+             timeStart;
+             
+         }
+    }
 
+    function stopTime(){
+        clearInterval(timeStart);
+    }
+
+    var newCounter = 4;
+
+ function endPage(){
+    timeStart;
+        counter = -2;
+       
+        if(counter == -4){
+            console.log("newcounteris0")
+
+           stopTime();
+            questionNum++;
+            loadQuestion2();
+            timeStart;
+        }
         
+        // newTimeStart;
+        // newCounter= 4;
+    
+        $("#question").text("The Answer was " + questions[questionNum].b);
+        $("#anwser1").html("");
+        $("#anwser2").html("");
+        $("#anwser3").text("");
+        $("#anwser4").text("");
+        $('#wins').html(wins);
+        $("#losses").html(losses);
+        if(counter == 0){
+            console.log("newcounteris0")
+           stopTime();
+            questionNum++;
+            loadQuestion2();
+            timeStart;
+        }
         
-    // firstQuestion();
+ }
+//  function newCountDown(){
+//     console.log("end counter is" + newCounter);
+//     timer.html(newCounter);
+//     newCounter--;
+//     if(newCounter == 0){
+//         console.log("newcounteris0")
+//         stopTime2();
+//         timeStart;
+//         questionNum++;
+//         loadQuestion2();
+//     }
+// }
+// function stopTime2(){
+//     clearInterval(newTimeStart);
+// }
+
+
+
     startGame();
 });

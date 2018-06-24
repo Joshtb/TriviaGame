@@ -1,19 +1,26 @@
 #anwser1 {
     height:50px;
     width:200px;
+    
 }
 
 #anwser2 {
     height:50px;
     width: 200px;
+    left:-40px;
 }
 
 #anwser3 {
     height:50px;
     width:200px;
+    left:-40px;
 }
 
 #anwser4 {
     height:50px;
     width:200px;
+    right:40px;
+}
+.anwser{
+    
 }
